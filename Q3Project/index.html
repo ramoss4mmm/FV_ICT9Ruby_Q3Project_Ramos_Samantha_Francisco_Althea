@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Q3Project</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+/*styling*/
+	body{
+	background-image: url('https://i.pinimg.com/736x/e8/bf/3b/e8bf3b6a88e6dd403cf3f67b230ee80f.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+
+	#textofnav{
+		color: #f4dfe8;
+		font-family: cursive, lucida handwriting;
+		font-weight: bold;
+		font-size: 20px;
+		border: 2px solid #f4dfe8;
+        padding: 5px 10px; 
+        border-radius: 5px;
+	}
+
+	#train_fair{
+		width: 70px;
+		height: 70px;
+	}
+
+	#searchbutton{
+		color: #f4dfe8;
+		border: 2px solid #f4dfe8;
+        padding: 5px 10px; 
+        border-radius: 5px
+	}
+
+
+	nav{
+		background-color: #b4a8c0;
+	}
+
+	h1{
+   		text-align: center;
+   		background-color: white;
+   		color: #b4a8c0;
+		font-family: cursive, lucida handwriting;
+		font-weight: bold;
+	}
+
+	#map{
+		width: 500px;
+		height: 800px;
+	}
+
+	label{
+		background-color: #f4dfe8;
+		color: #b4a8c0;
+		font-family: cursive, lucida handwriting;
+		font-weight: bold;
+		font-size: 25px;
+	}
+
+	#discount{
+		color: #f4dfe8;
+		background-color: #b4a8c0;
+		font-weight: bold;
+	}
+
+	#regular{
+		color: #b4a8c0;
+		background-color: #f4dfe8;
+		font-weight: bold;
+	}
+
+	h4{
+   		text-align: center;
+   		background-color: white;
+   		color: #b4a8c0;
+		font-family: cursive, lucida handwriting;
+		font-weight: bolder;
+	}
+
+</style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-default navbar-dark fixed-top">
+<!-- navbar -->
+	<div class="container-fluid">
+		<a class="navbar-brand" href="index.html"><img src="Train_Fair.png" id="train_fair"></a>
+		
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item">
+					<a class="nav-link text-default" href="index.html" id="textofnav">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-default" href="page2.html" id="textofnav">Sanrio Train Schedule</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-default" href="page3.html" id="textofnav">Contact Info</a>
+				</li>
+			</ul>
+			
+			<form class="d-flex">
+				<input class="form-control" type="search" placeholder="Search...">
+				<button class="btn btn-outline-default" type="submit" id="searchbutton">Seach</button>
+			</form>
+		</div>
+	</div>
+</nav>
+
+<br><br><br><br><br>
+
+<h1>Sam and Mau's Sanrio Fare Guide</h1>
+
+<div class="container">
+<!-- prices -->
+		<div class="row">
+			<div class="col-md-6">
+				<img src="train_map.png" id="map">
+			</div>
+			<div class="col-md-6">
+				<h1>Leaving From:</h1>
+
+				<br>
+
+				<form>
+				<label>Choose your Location:</label>
+				<select class="form-control" id="location">
+					<option value="none">Choose your location...</option>
+					<option value="0">North Avenue</option>
+					<option value="0">Quezon Avenue</option>
+					<option value="0">Kamuning</option>
+					<option value="3">Araneta Center-Cubao</option>
+					<option value="3">Santolan-Annapolis</option>
+					<option value="7">Ortigas</option>
+					<option value="7">Shaw Boulevard</option>
+					<option value="7">Boni</option>
+					<option value="11">Guadalupe</option>
+					<option value="11">Buendia</option>
+					<option value="11">Ayala</option>
+					<option value="15">Magallanes</option>
+					<option value="15">Taft Avenue</option>
+				</select>
+
+				<br>
+
+				<h1>Going to:</h1>
+
+				<br>
+
+				<label>Choose your destination:</label>
+				<select class="form-control" id="destination">
+					<option value="none">Choose your location...</option>
+					<option value="0">North Avenue</option>
+					<option value="0">Quezon Avenue</option>
+					<option value="0">Kamuning</option>
+					<option value="3">Araneta Center-Cubao</option>
+					<option value="3">Santolan-Annapolis</option>
+					<option value="7">Ortigas</option>
+					<option value="7">Shaw Boulevard</option>
+					<option value="7">Boni</option>
+					<option value="11">Guadalupe</option>
+					<option value="11">Buendia</option>
+					<option value="11">Ayala</option>
+					<option value="15">Magallanes</option>
+					<option value="15">Taft Avenue</option>
+				</select>
+				</form>
+
+				<br>
+
+				<h4>NOTE: PRICES MAY VARY FROM ₱13-₱28</h4>
+
+				<br>
+
+				<button class="btn btn-outline-default" type="submit" id="regular" onclick="showmeprice()">Regular Fare</button>
+				<button class="btn btn-outline-default" type="submit" id="discount" onclick="showmediscount()" value="0.2">Discounted Fare</button>
+			</div>
+		</div>
+</div>
+
+
+
+
+<br>
+
+<h1 style="font-size: 27px; text-align: center; font-family: cursive, lucida handwriting;"> Submitted by: Althea Francisco & Samantha Ramos... </h1>
+
+<a href="https://docs.google.com/document/d/1KrxnwbxUIYvcCKzZFbyRDur8mnZBZNdFH1aGo7tDHBQ/edit?usp=sharing" target="new" style="text-align: center; font-size: 30px; background-color: #f4dfe8; color: #b4a8c0;"> References...</a>
+
+
+<script type="text/javascript">
+// Java Script Coding
+
+function showmeprice(){
+	// formula
+		var location = document.getElementById("location").value;
+		var destination = document.getElementById("destination").value;
+		// final price
+		var baseFare = 13;
+		var subtract = Math.abs(location - destination);
+		var final = subtract + baseFare
+		window.alert("Your ticket price is ₱" + final );
+
+	}
+
+function showmediscount(){
+	// formula
+		var location = document.getElementById("location").value;
+		var destination = document.getElementById("destination").value;
+		var discount = document.getElementById("discount").value;
+		var baseFare = 13;
+		var subtract = Math.abs(location - destination);
+		var final1 = subtract + baseFare
+		var product = Number(final1) * Number(discount);
+		// final price
+		var subtraction = Math.floor(final1 - product);
+		window.alert("Your ticket price is ₱" + subtraction.toFixed(2));
+}
+
+</script>
+
+</body>
+</html>
